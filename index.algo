@@ -1,0 +1,38 @@
+ALGORITHM Sentence
+VAR
+s:STRING[];
+v:STRING="aeiouy";
+Now:INTEGER;
+Nv:INTEGER;
+i,j,k:INTEGER;
+Begin
+ //Define s 
+  WHILE (s[length(s)-1]='.') DO
+   write ("Enter a full sentence that ends with a point.",s);
+   read(s)
+  End_WHILE
+//count the number of words in the sentence.
+ i:=0;
+ NOW:=0;
+  FOR i FROM 0 TO length(s)-1 STEP DO
+    IF (s[i]=" ") THEN
+     Now:=Now+1;
+    END_IF 
+   Write(Now) ;
+  END_FOR
+ // count the number of existing vowels in the sentence
+ j:=0;
+ k:=0;
+ FOR j FROM 0 TO length(s)-1 STEP DO
+    FOR k FROM 0 TO length(v)-1 STEP DO 
+       IF s[j]=v[k] THEN
+       Nv:=Nv+1;
+       END_IF
+      write(Nv);
+    END_FOR
+ END_FOR
+write ("the length of the sentence is",length(s))   
+write ("the number of words in the sentence is",Now)
+write ("the number of vowels in the sentence is",Nv)
+END
+   
